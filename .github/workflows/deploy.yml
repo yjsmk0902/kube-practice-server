@@ -2,7 +2,7 @@ name: Integration to NCR
 
 on:
   push:
-    branches: [dev, prod]
+    branches: [dev, prod, main]
 
 env:
   IMAGE_TAG: ${{ github.sha }}
