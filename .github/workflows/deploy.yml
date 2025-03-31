@@ -7,15 +7,13 @@ on:
 env:
   IMAGE_TAG: ${{ github.sha }}
   APP_NAME: kube-test-server-${{ github.ref_name }}
+  NKS_ENVIRONMENT: ${{ secrets.NKS_ENV }}
 
 jobs:
   CI:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
-      - name: Set dynamic APP_NAME
-        run: echo "APP_NAME=kube-test-server-${{ github.base_ref }}" >> $GITHUB_ENV
 
       - name: Build auth setting
         run: chmod +x gradlew
