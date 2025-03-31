@@ -6,7 +6,7 @@ on:
 
 env:
   IMAGE_TAG: ${{ github.sha }}
-  APP_NAME: ${{ kube-test-server }}
+  APP_NAME: kube-test-server-${{ github.ref_name }}
 
 jobs:
   CI:
